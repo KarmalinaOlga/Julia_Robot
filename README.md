@@ -1,4 +1,5 @@
-# Julia_Robot
+# Julia_Robot 1 zadacha
+
 function mark_kross!(r::Robot)
     for side in (Nord,West,Sud,Ost)
         num_steps=get_num_steps_putmarkers!(r,side)
