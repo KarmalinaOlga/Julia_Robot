@@ -40,3 +40,14 @@ function putmarkers!(r::Robot, direction_step::HorizonSide, direction_border::Ho
     end
 
 end
+
+function find_border!(r::Robot, direction_border::HorizonSide, direction_movement::HorizonSide)
+    while isborder(r,direction_border)==false  
+        if isborder(r,direction_movement)==false
+            move!(r,direction_movement)
+        else
+            move!(r,direction_border)
+            direction_movement=inverse(direction_movement)
+        end
+    end
+end
